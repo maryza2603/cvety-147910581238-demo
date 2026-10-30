@@ -1,0 +1,60 @@
+/* Hallmark · macrostructure: Poster stickers (плакат, ленты, наклейки) · theme: custom (персик, малина, чернила) · anchor hue: малина */
+:root {
+  --c-canvas: #ffeede; --c-surface: #fffaf4; --c-ink: #261822; --c-ink-soft: #6c5260;
+  --c-accent: #e23a74; --c-accent-ink: #ffffff; --c-accent-deep: #c01f58;
+  --f-display: "Rubik", "Segoe UI", system-ui, sans-serif; --f-text: "Rubik", "Segoe UI", system-ui, sans-serif;
+  --hair: #261822; --r: 20px; --tint: #ffd6c2; --shadow: 6px 6px 0 #261822; --h1k: 1;
+}
+body { font-family: var(--f-text); }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+.s-btn { border: 2px solid var(--c-ink); border-radius: 999px; box-shadow: 3px 3px 0 var(--c-ink); font-weight: 700; transition: transform .15s ease, box-shadow .15s ease; }
+.s-btn:hover { filter: none; transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--c-ink); }
+.s-btn--ghost { background: var(--c-surface); }
+.s-bar { background: var(--c-canvas); border-bottom: 2px solid var(--c-ink); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.s-bar__brand { font-weight: 800; font-size: 1.15rem; }
+.s-bar__brand i { background: var(--c-accent); border: 2px solid var(--c-ink); width: .85em; height: .85em; }
+
+/* первый экран: заголовок-плакат, наклейка с рейтингом, запись - карточка с жёсткой тенью */
+.s-hero { padding-top: 36px; }
+.s-hero__bg { display: none; }
+.s-eyebrow { background: var(--c-ink); color: var(--c-canvas); padding: 6px 12px; border-radius: 999px; letter-spacing: .1em; }
+.s-hero h1 { font-size: clamp(2.6rem, 6.4vw, 5.4rem); color: var(--c-ink); }
+.s-lead { color: var(--c-ink); font-weight: 400; }
+.s-ticks li::before { background: var(--c-accent); border: 2px solid var(--c-ink); width: 20px; height: 20px; }
+.s-ticks li::after { border-color: #fff; left: 6px; top: calc(.1em + 4px); }
+.s-rating { display: inline-block; transform: rotate(-3deg); background: #ffd23f; border: 2px solid var(--c-ink); border-radius: 14px; padding: 10px 16px; color: var(--c-ink); box-shadow: 3px 3px 0 var(--c-ink); }
+.s-hero__photo img { border: 2px solid var(--c-ink); border-radius: 26px; box-shadow: var(--shadow); aspect-ratio: 16 / 10; }
+.s-hero__widget { top: 80px; }
+.s-widget { border: 2px solid var(--c-ink); border-radius: var(--r); box-shadow: var(--shadow); background: var(--c-surface); }
+.s-chip { border: 2px solid var(--c-ink); border-radius: 14px; }
+.s-chip:has(input:checked) { background: #ffd23f; border-color: var(--c-ink); }
+.s-bubble { border: 2px solid var(--c-ink); background: var(--tint); }
+.s-total b { color: var(--c-accent-deep); }
+
+/* секции */
+.s-section__head h2 { font-size: clamp(2rem, 4.4vw, 3.4rem); }
+.s-board__row { border-bottom: 2px dashed var(--c-ink); }
+.s-board__price { font-size: 1.3rem; color: var(--c-accent-deep); }
+.s-steps__item { border: 2px solid var(--c-ink); border-radius: 22px; box-shadow: 5px 5px 0 var(--c-ink); }
+.s-steps__item:nth-child(2n) { background: #ffd23f; }
+.s-steps__item:nth-child(3n) { background: #ffb3c8; transform: rotate(1.2deg); }
+.s-steps__n { background: var(--c-ink); color: #fff; }
+.s-photos img { border: 2px solid var(--c-ink); border-radius: 24px; box-shadow: 5px 5px 0 var(--c-ink); }
+.s-photos figure:nth-child(2) { transform: rotate(-2deg); }
+.s-photos figure:nth-child(3) { transform: rotate(1.5deg); }
+.s-promises li { border: 2px solid var(--c-ink); border-top-width: 2px; border-radius: 22px; box-shadow: 5px 5px 0 var(--c-ink); }
+.s-promises li:nth-child(2) { background: #ffd23f; }
+.s-promises li:nth-child(3) { background: #ffb3c8; }
+.s-reviews li { border: 2px solid var(--c-ink); border-radius: 22px; box-shadow: 5px 5px 0 var(--c-ink); }
+.s-faq details { border: 2px solid var(--c-ink); border-radius: 18px; background: var(--c-surface); }
+.s-contacts { background: var(--c-accent); color: #fff; border: 2px solid var(--c-ink); border-radius: 28px; box-shadow: var(--shadow); }
+.s-contacts dt { color: #ffe0ea; }
+.s-contacts .s-btn { background: #fff; color: var(--c-ink); }
+.s-contacts .s-btn--ghost { background: var(--c-ink); color: #fff; }
+.s-foot { border-top: 2px solid var(--c-ink); }
+.s-dock { background: var(--c-canvas); border-top: 2px solid var(--c-ink); box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+@media (max-width: 640px) {
+  .s-steps__item:nth-child(3n), .s-photos figure:nth-child(2), .s-photos figure:nth-child(3) { transform: none; }
+  .s-rating { transform: none; }
+}
